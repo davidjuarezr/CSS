@@ -1,0 +1,948 @@
+*{
+    margin: 0;   
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Open Sans';
+}
+
+.contenedor{
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.titulo{
+    color: #0a4dc2;
+    font-size: 50px;
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.subtitulo{
+    color: #0a4dc2;
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.contenedor p{
+    color: #033385;
+}
+
+
+
+/* Header */
+/* background-size: cover; Ajusta el tamaño de la imagen */
+/* background-attachment: fixed; Ajusta el tamaño de la imagen */
+header{
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    /* background-attachment: fixed;  */
+    background-image: url(/assets/img/fondo-header-light.png);
+    position: relative;
+    /* opacity: 30%; */
+}
+
+/* se asigna la altura del menu */
+nav{
+    /* top: 50PX;
+    height: 80px;
+    background-color: white; */
+    /* text-align: right; */
+    padding: 30px 50px 0 0;
+}
+
+/* se agrega el logo en la parte derecha de mi menu */
+nav .logo{
+    color: #0759e6;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 50px;
+    padding-left: 20px;
+}
+
+/* Otorgar una posicion a la deracha al menu */
+nav ul{
+    float: right;
+    margin-right: 35;
+}
+
+/* etiquetas li las pasa en una sola linea horizontal */
+nav ul li{
+    display: inline-block;
+    transition: .4s;
+}
+
+/* en bloque cambia el formato a los botones del menu*/
+nav ul li a{
+    top: 80px;
+    color: #0759e6;
+    padding: 0 20px;
+    display: block;
+    line-height: 50px;
+    font-size: 16px;
+    background: transparent;
+    background-color: transparent;
+    transition: .4s;
+}
+
+/* al pasar el mouse lo cambia de color */
+nav ul li a:hover
+{
+    background-color: #0759e6;
+    border-radius: 5%;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    color: white;
+}
+
+
+/* Principal  */
+
+main .principal{
+    padding: 0 0 60px 0;
+}
+
+/* el texto y la imagen los pone en dos columnas */
+.contenedor-principal{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ajusta el ancho de la imagen en dos columnas */
+.principal .imagen-about-us{
+    width: 49%;
+}
+
+/* ajusta el ancho del texto en dos columnas */
+.principal .contenido-textos{
+    width: 48%;
+}
+
+/* Se ajusta el tamaño del texto */
+.principal .contenido-textos h3 {
+    margin-bottom: 15px;
+    color: #033385;
+}
+    
+/* Se ajusta el tamaño del texto */
+.principal .contenido-textos h4 {
+    margin-bottom: 15px;
+    color: #033385;
+    padding: 60px 0 0 0;
+}
+
+/* Se ajusta el tamaño del texto */
+.principal .contenido-textos h5 {
+    margin-bottom: 15px;
+    color: #033385;
+    padding: 20px 0 40px 0;
+}
+
+/* se ajusta el parrafo del bloque de nustro producto */
+.principal .contenido-textos p{
+    padding: 0px 0px 30px 15px;
+    color: #033385;
+    font-weight: 300;
+    text-align: justify;
+}
+
+/* agrupa las imagenes */
+.principal .principal-cont{
+    display: flex;
+    justify-content: space-between; /* era diferente */
+    align-items: center;
+}
+
+.principal .principal-ind{
+    width: 48%;
+    text-align: left;
+    /* box-shadow: 0 0 10px 0 rgba(61, 13, 151, 0.12); */
+    margin-bottom: 20px;
+}
+
+.principal .contenido-textos img{
+    /* margin: 20px 0; */
+    border-image: 10px solid hsla(218, 73%, 71%, 0.158);
+    box-shadow: 0 0 10px 0 rgba(61, 13, 151, 0.2);
+    border-radius: 10%;
+    border-image-outset: 10px;
+}
+
+.img-galeria{
+    object-fit: cover;
+    /* width: 30%; */
+    /* display: block; */
+    /* margin-bottom: 15px; */
+    /* box-shadow: 1 1 6px rgba(0, 0, 0, 0.5); */
+    border-image: 10px solid hsla(218, 73%, 71%, 0.158);
+    box-shadow: 0 0 10px 0 rgba(61, 13, 151, 0.2);
+    border-radius: 10%;
+    border-image-outset: 10px;
+    cursor: pointer;
+}
+
+.imagen-light{
+    position: fixed;
+    background: rgba(0, 0, 0, .6);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(100%); /*100%      0*/
+    transition: transform .2s ease-in-out;
+}
+
+.show{
+    transform: translate(0);
+}
+.agregar-imagen{
+    object-fit: cover;
+    width: 10%;
+    border-radius: 10px;
+    transform: scale(0);   /* 1     0 */
+    transition: transform .3s .2s;
+}
+
+.showImage{
+    transform: scale(1);
+}
+
+.close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    cursor: pointer;
+}
+
+
+.hero__cta{
+    text-decoration: none;
+    color: #033385;
+    padding: 15px 60px;
+    /* border: 1px solid; */
+    /* border-radius: 6px; */
+    display: inline-block;
+    font-weight: 500;
+    transition: bacjground-color .3s;
+}
+
+.hero__cta:hover{
+    background-color: #fff;
+    color: #1e64e6;
+}
+
+
+
+/* ocupa el 100% de la pagina */
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;    
+    display: flex;
+    opacity: 0;     /* se oculta el modal */
+    pointer-events: none;
+    transition: opacity .6s .7s;        /* permite agregar una transicion de manera no instantanea */
+    --transform: translateY(-100vh);
+    --transform: transform .8s;
+}
+
+/* se crea una clase modal */
+/* para mostar el modal */
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;     
+    transition: opacity .6s;
+    --transform: translateY(0);
+    --transform: transform .8s .8s;
+}
+
+/* cotenedor del contenido */
+.modal__container{
+    margin: auto;
+    width: 90%;
+    max-width: 800px;
+    max-height: 50%;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;   /* separa los elementos */
+    place-items: center;    /*centra los elementos */
+    grid-auto-columns: 100%;    /* las columnas midan el 100% */
+    transform: var(--transform);
+    /* transition: transform .3s; */
+    transition: var(--transform);
+
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 30px;
+    /* border-bottom: 1px solid #ccc; */
+}
+
+.moda__title{
+    font-size: 1.5em;
+    color: #aaadb3;
+}
+
+.modal__paragraph{
+    margin-bottom: 10px;
+    color: #033385;
+}
+
+.modal__img{
+    width: 60%;
+    max-width: 300px;
+    color: #aaadb3;
+}
+
+.modal__close{
+    text-decoration: none;
+    color: #fff;
+    background-color: #033385;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: background-color .3s;
+}
+
+.modal__close:hover{
+    color: #033385;
+    background-color: #fff;
+
+}
+
+
+
+/* About us  */
+
+main .sobre-nosotros{
+    padding: 30px 0 60px 0;
+}
+
+/* el texto y la imagen los pone en dos columnas */
+.contenedor-sobre-nosotros{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ajusta el ancho de la imagen en dos columnas */
+.sobre-nosotros .imagen-about-us{
+    width: 48%;
+}
+
+/* ajusta el ancho del texto en dos columnas */
+.sobre-nosotros .contenido-textos{
+    width: 48%;
+}
+
+.sobre-nosotros.sobre-nosotros-ind{
+    width: 100%;
+    height: auto;
+    padding: 10px 10px;
+    /* margin: auto; */
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px 0 rgba(61, 13, 151, 0.12);
+}
+
+.sobre-nosotros .sobre-nosotros-ind:hover{
+    width: 100%;
+    height: auto;
+    padding: 10px 10px;
+    /* margin: auto; */
+    margin-bottom: 10px;
+    box-shadow: 0 0 30px 0 rgba(61, 13, 151, 0.2);
+}
+
+
+.sobre-nosotros .contenido-textos h4{
+    /* width: 50%; */
+    padding: 10px 0;    
+}
+
+/* Se ajusta el tamaño del texto */
+.sobre-nosotros .contenido-textos h3 {
+    margin-bottom: 15px;
+    color: #033385;
+}
+    
+/* Se ajusta el tamaño del texto */
+.sobre-nosotros .contenido-textos h4 {
+    margin-bottom: 15px;
+    color: #033385;
+    /* padding: 80px 0 0 0; */
+}
+
+/* Se ajusta el tamaño del texto */
+.sobre-nosotros .contenido-textos h5 {
+    margin-bottom: 15px;
+    color: #033385;
+    /* padding: 60px 0 20px 0; */
+}
+
+/* se ajusta el parrafo del bloque de nustro producto */
+.sobre-nosotros .contenido-textos p{
+    padding: 0px 0px 30px 15px;
+    color: #033385;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.sobre-nosotros .contenido-textos img{
+    /* margin: 20px 0; */
+    border: 10px solid hsla(218, 73%, 71%, 0.158);
+    box-shadow: 0 0 10px 0 rgba(61, 13, 151, 0.2);
+    border-radius: 10%;
+    /* border-image-outset: 1px; */
+}
+
+/* Galeria */
+
+.portafolio{
+    background: #f2f2f2a9;
+}
+
+/* agrega un espaciado entre imagenes  */
+.galeria-port{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* ajusta las imagenes en el bloque para que se puedan visualizar */
+.imagen-port{
+    width: 24%;
+    margin-bottom: 10px;
+    /* height: 160px; */
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    /* box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5); */
+}
+
+/* las imagenes las deja al mismo tamaño */
+/* se ajusten al ancho y largo */
+.imagen-port > img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    opacity: .1;
+}
+
+.hover-galeria{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: hsla(270, 2%, 56%, 0.7);
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* ajusta el tamaño de la imagen */
+.hover-galeria img{
+    width: 50px;
+}
+
+/* cambia el color del parrafo de la imagne generica */
+.hover-galeria p{
+    color: #fff;
+}
+
+/* Our team */
+
+.about-services{
+    background: #f2f2f2;
+    padding-bottom: 30px;
+}
+
+/* agrupa las imagenes */
+.servicio-cont{
+    display: flex;
+    justify-content: space-between; /* era diferente */
+    align-items: center;
+}
+
+.servicio-ind{
+    width: 48%;
+    text-align: left;
+    box-shadow: 0 0 10px 0 rgba(61, 13, 151, 0.12);
+    margin-bottom: 20px;
+}
+
+/* se ajustan las imagenes */
+.servicio-ind img{
+    width: 20%;
+}
+
+/* se agrega un margen en la parte superior */
+.servicio-ind h3{
+    margin: 10px 20px;
+    color: #033385;
+    /* font-size: 14px; */
+}
+
+/* se agrega un margen en la parte superior */
+.servicio-ind h4{
+    margin: 10px 0;
+    color: #033385;
+    /* font-size: 12px; */
+}
+
+/* se ajusta el texto de los parrafos */
+.servicio-ind p{
+    font-weight: 300;
+    font-size: 12px;
+    padding: 10px 10px 10px 10px;
+    text-align: justify;
+    color: #033385;
+}
+
+
+
+/* acerca de */
+
+
+main .acerca-de{
+    /* background: #f0f3f5; */
+    padding: 10px 0;
+    text-align: left;
+}
+
+main .acerca-de .contenedor-texto-acerca .titulo-acerca{
+    font-size: 30px;
+    font-weight: 700;
+    color: #033385;
+    margin-bottom: 30px;
+}
+
+main .acerca-de .contenedor-texto-acerca .parrafo-acerca{
+    color: #033385;
+    font-weight: 800px;
+    /* margin-bottom: 10px; */
+    width: 60%;
+}
+
+.servicio-ind .call-to-action{
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid #beccf349;
+    text-align: center;
+    font-size: 10px;
+    color: #033385;
+    background-color: #beccf349;
+    text-decoration: none;
+    border-radius: 3px;
+    height: 35px;
+    width: 110px;
+}
+
+.servicio-ind .call-to-action:hover{
+    background: #0759e6;
+    color: #fff;
+    box-shadow: 0 0 10px 0 rgba(61, 13, 151, 0.12);
+}
+
+
+/* iconos */
+
+
+main .iconos{
+    /* background: #fff; */
+    padding: 10px 0;
+}
+
+.contenedor-iconos{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.contenedor-iconos .iconos-individual{
+    width: 22%;
+    height: 250px;
+    padding: 10px 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px 0 rgba(61, 13, 151, 0.12);
+}
+
+.contenedor-iconos .iconos-individual:hover{
+    width: 22%;
+    height: 250px;
+    padding: 10px 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    box-shadow: 0 0 30px 0 rgba(61, 13, 151, 0.2);
+}
+
+.contenedor-iconos .iconos-individual img{
+    margin: 20px 0;
+    border: 6px solid hsla(218, 73%, 71%, 0.158);
+    box-shadow: 0 0 10px 0 rgba(61, 13, 151, 0.2);
+    border-radius: 10%;
+    border-image-outset: 1px;
+}
+
+.contenedor-iconos .iconos-individual h3{
+    margin: 10px 0;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    color: #033385;
+}
+
+.contenedor-iconos .iconos-individual p{
+    margin: 10px 0;
+    text-align: left;
+    font-size: 10px;
+}
+
+
+
+/* Contacto  */
+
+main .sobre-contacto{
+    padding: 30px 0 60px 0;
+}
+
+/* el texto y la imagen los pone en dos columnas */
+.contenedor-sobre-contacto{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ajusta el ancho de la imagen en dos columnas */
+.sobre-contacto .imagen-about-us{
+    width: 48%;
+}
+
+/* ajusta el ancho del texto en dos columnas */
+.sobre-contacto .contenido-textos{
+    width: 48%;
+}
+
+.sobre-contacto .contenido-textos h4{
+    /* width: 50%; */
+    padding: 10px 0;
+    
+}
+
+/* Se ajusta el tamaño del texto */
+.sobre-contacto .contenido-textos h3 {
+    margin-bottom: 15px;
+    color: #033385;
+}
+    
+/* Se ajusta el tamaño del texto */
+.sobre-contacto .contenido-textos h4 {
+    margin-bottom: 15px;
+    color: #033385;
+    /* padding: 80px 0 0 0; */
+}
+
+/* Se ajusta el tamaño del texto */
+.sobre-nosotros .contenido-textos h5 {
+    margin-bottom: 15px;
+    color: #033385;
+    /* padding: 60px 0 20px 0; */
+}
+
+/* se ajusta el parrafo del bloque de nustro producto */
+.sobre-contacto .contenido-textos p{
+    padding: 0px 0px 30px 15px;
+    color: #033385;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.sobre-contacto .contenido-textos img{
+    /* margin: 20px 0; */
+    border-image: 5px solid hsla(218, 73%, 71%, 0.158);
+    box-shadow: 0 0 20px 0 rgba(61, 13, 151, 0.2);
+    border-radius: 10%;
+    /* border-image-outset: 1px; */
+}
+
+
+/* footer */
+
+footer{
+    background: #eef3ff;
+    padding: 60px 0 30px 0;
+    margin: auto;   /* no estaba */
+    overflow: hidden;   /* no estaba */
+}
+
+.contenedor-footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    /* border-bottom: 1px solid #ccc; */
+}
+
+/* da formato al texto de titulos */
+.content-foo{
+    text-align: left;
+}
+
+/* da formato al h4 */
+.content-foo h4{
+    color: #0a4dc2;
+    font-size: 12px;
+    /* border-bottom: 3px solid #af20d3; */
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* da formato al parrafo */
+.content-foo p{
+    color: #849ac0;
+    font-size: 10px;
+    padding: 5px;
+}
+
+/* da formato al texto del responsable del diseño */
+.titulo-final{
+    /* text-align: center; */
+    display: flex;
+    width: 100%;
+    font-size: 6px;
+    margin: 20px 0 0 0;
+    padding: 10px;
+    color: #849ac0;
+    justify-content: space-evenly;
+}
+
+
+
+/* adaptar mi pagina a responsive a 900px */
+/* ctl + shift + m */
+@media screen and (max-width:900px){
+    /* se centra la imagen */
+    header{
+        background-position: center;
+    }
+
+    /* cambia el texto en columna */
+    .contenedor-principal{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+        
+    /* cambia el texto en columna */
+    .contenedor-sobre-nosotros{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* cambia el texto en columna */
+    .contenedor-sobre-contacto{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* se ajusta el texto de los parrafos de nuestros productos */
+    .sobre-nosotros .contenido-textos{
+        width: 90%;
+    }
+
+    /* se agusta la imagen */
+    .imagen-about-us{
+        width: 90%;
+    }
+
+    /* Galeria */
+
+    .imagen-port{
+        width: 44%;
+    }
+
+    .servicio-ind .img-call-to-action{
+        width: 10%;
+    }
+
+
+    /* Servicios */
+
+    .servicio-cont{
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    /* se ajustan al 100% de la pantalla */
+    .servicio-ind{
+        width: 100%;
+        text-align: center;
+    }
+
+    /* a las dos primeras tarjets se les agrega un margen */
+    .servicio-ind:nth-child(1), .servicio-ind:nth-child(2){
+        margin-bottom: 60px;
+    }
+
+    /* se ajusta la imagen al 90% */
+    .servicio-ind img{
+        width: 90%;
+    }
+
+        /* se ajusta la imagen al 90% */
+    .sobre-contacto .servicio-ind p{
+        width: 90%;
+        text-align: center;   
+    }
+
+    /* footer */
+    .contenedor-footer{
+        flex-direction: column;
+        border: none;
+    }
+
+    .content-foo{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .content-foo h4{
+        border: none;
+    }
+
+    .content-foo p{
+        color: #ccc;
+        border-bottom: 1px solid #f2f2f2;
+        padding-bottom: 20px;
+    }
+
+    .titulo-final .footerIzq{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 8px;
+    }
+    
+    .titulo-final .footerder{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 8px;
+    }
+}
+
+
+/* adaptar mi pagina a responsive a 500px */
+/* ctl + shift + m */
+@media screen and (max-width:500px){
+    /* menu de navegacion */
+    nav{
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+
+    /* se agrega un margen derecho a los enlaces que estan dentro del nav */
+    nav > a{
+        margin-right: 5px;
+    }
+
+    .textos-header h1{
+        font-size: 35px;
+    }    
+    .textos-header h2{
+        font-size: 20px;
+    }
+
+    /* about us */
+
+    /* se agusta la imagen */
+    .imagen-about-us{
+        margin-bottom: 60px;
+        width: 99%;
+    }
+
+     /* se ajusta el texto de los parrafos de nuestros productos */
+    .principal .contenido-textos{
+        width: 95%;
+    }
+    
+    /* se ajusta el texto de los parrafos de nuestros productos */
+    .sobre-nosotros .contenido-textos{
+        width: 95%;
+    }
+
+    /* se ajusta el texto de los parrafos de nuestros productos */
+    .sobre-contacto .contenido-textos{
+        width: 95%;
+    }
+
+    /* Galeria */
+
+    .imagen-port{
+        width: 95%;
+    }
+
+    /* Clients */
+/* 
+    .cards .card{
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards .card img{
+        width: 90px;
+        height: 90px;
+    } */
+
+    /* footer */
+    .contenedor-footer{
+        flex-direction: column;
+        border: none;
+    }
+
+    .content-foo{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .content-foo h4{
+        border: none;
+    }
+
+    .content-foo p{
+        color: #ccc;
+        border-bottom: 1px solid #f2f2f2;
+        padding-bottom: 20px;
+    }
+
+    .titulo-final{
+        font-size: 20px;
+    }
+}
